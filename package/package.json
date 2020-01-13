@@ -1,0 +1,38 @@
+{
+  "name": "sabiduria",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./package/bin/www",
+    "test": "nyc mocha --exit"
+  },
+  "dependencies": {
+    "collections": "^5.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jsdom": "^11.11.0",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "sinon": "^6.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "./routes",
+      "app.js",
+      "config.js",
+      "test",
+      "./services/html-parser.js"
+    ]
+  }
+}

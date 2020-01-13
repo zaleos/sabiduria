@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    input(type="hidden", value=productId, id='productId')
+
+    div(
+      class='row'
+    )
+        div(
+            class='col-4 text-center'
+        )
+            img(src='/' + productId + '/logo' style="width: 80%;")
+        div(
+            class='col-8'
+        )
+            h1 #{productId.toUpperCase()}
+            p !{description}
+
+    div(
+      class='row'
+    )
+        div(
+            class='col-md-6 offset-md-3'
+        )
+            h2 Download documentation
+
+    div(
+      class='row'
+    )
+        div(
+            class='col-md-6 offset-md-3'
+        )
+            <div class="input-group mb-3">
+                input(
+                    type='text',
+                    class='form-control',
+                    spellcheck='false',
+                    autocomplete='off',
+                    id='typeahead',
+                    placeholder='Filter by version...'
+                )
+            </div>
+
+            table(
+                class='table table-hover',
+                id='versions'
+            )
+                thead(
+                    class='thead-light'
+                )
+                    tr
+                        th Version
+                        th(
+                            colspan='3'
+                        ) Formats
+                tbody
+
+            script
+                include ../public/javascripts/main.js

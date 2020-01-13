@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    - var column = 0
+    each val in products
+        if column === 0
+            <div class='row product-row'>
+        div(
+            class='col'
+            align='center'
+        )
+            a(href='/' + val class='product-link')
+                    <div class="product-body">
+                        img(src='/' + val + '/logo', alt="" class='product-img')
+                        h3 #{val.toUpperCase()}
+                    </div>
+        if column === rowSize - 1
+            - column = 0
+            </div>
+        else
+            - column++
+    while column <= rowSize - 1         
+        div(
+            class='col'
+            align='center'
+        )
+        - column++
+    </div>
